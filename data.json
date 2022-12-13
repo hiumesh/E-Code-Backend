@@ -1,0 +1,370 @@
+{
+  "categories": [
+    {
+      "Name": "Algorithm"
+    }
+  ],
+  "tags": [
+    {
+      "Name": "Array",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "String",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Hash Table",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Dynamic Programming",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Math",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Sorting",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Greedy",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Depth-First Search",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Database",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Breadth-First Search",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Tree",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Binary Search",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Matrix",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Binary Tree",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Two Pointers",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Bit Manipulation",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Stack",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Heap(Priority Queue)",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Design",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Graph",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Prefix Sum",
+      "CategoryId": "Algorithm"
+    },{
+      "Name": "Simulation",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Backtracking",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Counting",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Sliding Window",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Linked List",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Union Find",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Ordered Set",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Monotonic Stack",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Enumeration",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Recursion",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Trie",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Divide and Conquer",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Binary Search Tree",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Bitmask",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Queue",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Memoization",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Geometry",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Segment Tree",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Topological Sort",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Hash Function",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Game Theory",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Binary Indexed Tree",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Number Theory",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Interactive",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "String Matching",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Rolling Hash",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Shortest Path",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Data Stream",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Combinatorics",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Randomized",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Monotonic Queue",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Brainteaser",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Merge Sort",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Iterator",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Concurrency",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Doubly-Linked List",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Probability and Statistics",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Quickselect",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Bucket Sort",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Suffix Array",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Minimum Spanning Tree",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Counting Sort",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Shell",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Line Sweep",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Reservoir Samping",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Eulerian Circuit",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Radix Sort",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Strongly Connected Component",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Rejection Sampling",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Biconnected Component",
+      "CategoryId": "Algorithm"
+    }
+  ],
+  "languages": [
+    {
+      "Name": "Python",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Java Script",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "C",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "C++",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "C#",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Java",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Go",
+      "CategoryId": "Algorithm"
+    },
+    {
+      "Name": "Rust",
+      "CategoryId": "Algorithm"
+    }
+  ],
+  "companies": [
+    {
+      "Name": "Google"
+    },
+    {
+      "Name": "Amazon"
+    },
+    {
+      "Name": "Facebook"
+    },
+    {
+      "Name": "IBM"
+    },
+    {
+      "Name": "Microsoft"
+    },
+    {
+      "Name": "Oracle"
+    },
+    {
+      "Name": "Intel"
+    },
+    {
+      "Name": "Salesforce"
+    },
+    {
+      "Name": "Cisco"
+    },
+    {
+      "Name": "Adobe"
+    },
+    {
+      "Name": "Nvidia"
+    },
+    {
+      "Name": "Infosys"
+    },
+    {
+      "Name": "Tencent"
+    },
+    {
+      "Name": "Capgemini"
+    }
+  ]
+}
