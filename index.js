@@ -3,9 +3,12 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const db = require('./helpers/db')
 const router = require('./routes/index')
+const path = require('path')
 
 const app = express();
 
+
+app.use('/static', express.static(path.join(__dirname, '/uploads')));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors({
