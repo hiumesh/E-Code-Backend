@@ -1,0 +1,30 @@
+{
+  "name": "e-code",
+  "version": "1.0.0",
+  "description": "online coding site",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "npm index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiumesh/e-code-backend.git"
+  },
+  "author": "umesh swapnil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hiumesh/e-code-backend/issues"
+  },
+  "homepage": "https://github.com/hiumesh/e-code-backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.4",
+    "nodemon": "^2.0.20",
+    "pg": "^8.8.0",
+    "sequelize": "^6.25.5"
+  }
+}

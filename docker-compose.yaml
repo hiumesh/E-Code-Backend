@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  server:
+    build:
+      context: .
+      dockerfile: dockerfiles/server.Dockerfile
+    volumes:
+      - ./:/home/node/app
+    env_file:
+      - ./env/postgres.env
+      - ./env/key.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres
+    volumes:
+      - ./dump:/var/lib/postgresql/data
+    env_file:
+      - ./env/postgres.env
+  npm:
+    build:
+      context: .
+      dockerfile: dockerfiles/npm.Dockerfile
+    volumes:
+      - ./:/home/node/app
+  
