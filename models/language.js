@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../helpers/db')
 
-const Category = db.define('Tbl_Category', {
+const Language = db.define('Tbl_Language', {
   Id: {
     type: Sequelize.BIGINT,
     primaryKey: true,
@@ -12,10 +12,13 @@ const Category = db.define('Tbl_Category', {
     unique: true,
     allowNull: false,
   },
-  Description: {
-    type: Sequelize.STRING,
-    allowNull: false
+  CategoryId: {
+    type: Sequelize.BIGINT,
+    references: {
+      model: 'Tbl_Category',
+      key: 'Id'
+    }
   }
-}, { tableName: 'Tbl_Category' })
+}, { tableName: 'Tbl_Language' })
 
-module.exports = Category
+module.exports = Language

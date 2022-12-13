@@ -6,4 +6,5 @@ const sequelize = new Sequelize(process.env.POSTGRES_DB, process.env.POSTGRES_US
   logging: console.log,
 })
 
+
 module.exports = sequelize

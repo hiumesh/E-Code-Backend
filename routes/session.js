@@ -4,7 +4,7 @@ const { checkAuth } = require('../middleware/auth')
 
 const router = Router()
 
-router.post('/getAllUserSession', checkAuth, findAllUserSessions)
-router.post('/delete', checkAuth, destoryUserSession)
+router.get('/getAllUserSession', checkAuth, findAllUserSessions)
+router.delete('/delete', checkAuth, destoryUserSession)
 
 module.exports = router

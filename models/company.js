@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../helpers/db')
 
-const Category = db.define('Tbl_Category', {
+const Company = db.define('Tbl_Company', {
   Id: {
     type: Sequelize.BIGINT,
     primaryKey: true,
@@ -11,11 +11,7 @@ const Category = db.define('Tbl_Category', {
     type: Sequelize.STRING,
     unique: true,
     allowNull: false,
-  },
-  Description: {
-    type: Sequelize.STRING,
-    allowNull: false
   }
-}, { tableName: 'Tbl_Category' })
+}, { tableName: 'Tbl_Company' })
 
-module.exports = Category
+module.exports = Company

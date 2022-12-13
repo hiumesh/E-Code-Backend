@@ -32,6 +32,7 @@ const createCategory = async(req, res) => {
   }
 }
 
+
 module.exports = {
   findAllCategories,
   createCategory,

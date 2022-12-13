@@ -4,10 +4,10 @@ const checkAuth = async (req, res, next) => {
   try {
     const accessToken = req.headers['x-access-token']
     const refreshToken = req.headers['x-refresh-token']
-
+    
     const verifiedUser = await verifyAccessToken(accessToken, refreshToken)
     if (verifiedUser?.user) {
-      if (verifiedUser?.token) res.set('x-access-token', verifiedUser.token)
+      if (verifiedUser?.token) res.append('x-access-token', verifiedUser.token)
       req.user = verifiedUser.user
       next()
     } else {

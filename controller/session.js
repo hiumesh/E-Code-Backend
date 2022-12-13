@@ -2,7 +2,7 @@ const sessionService = require('../services/session')
 
 const findAllUserSessions = async (req, res) => {
   try {
-    const sessions = sessionService.findSessions({ UserId: req.user.Id })
+    const sessions = await sessionService.findSessions({ UserId: req.user.Id })
     return res.send({
       success: true,
       data: sessions
@@ -17,7 +17,7 @@ const findAllUserSessions = async (req, res) => {
 
 const destoryUserSession = async (req, res) => {
   try {
-    const session = sessionService.deleteSession({ SessionId: req.body.SessionId, UserId: req.user.Id })
+    const session = await sessionService.deleteSession({ Id: req.body.SessionId, UserId: req.user.Id })
     return res.send({
       success: true,
       data: session

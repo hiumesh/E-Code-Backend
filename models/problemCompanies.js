@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../helpers/db')
 
-const ProblemCategory = db.define('Tbl_Problem_Category', {
+const ProblemCompanies = db.define('Tbl_Problem_Companies', {
   ProblemId: {
     type: Sequelize.BIGINT,
     references: {
@@ -9,20 +9,20 @@ const ProblemCategory = db.define('Tbl_Problem_Category', {
       key: 'Id'
     }
   },
-  CategoryId: {
+  CompanyId: {
     type: Sequelize.BIGINT,
     references: {
-      model: 'Tbl_Category',
+      model: 'Tbl_Company',
       key: 'Id'
     }
   }
 }, {
   indexes: [
     {
-      fields: ['ProblemId', 'CategoryId'],
+      fields: ['ProblemId', 'CompanyId'],
       type: 'UNIQUE'
     }
   ]
 })
 
-module.exports = ProblemCategory
+module.exports = ProblemCompanies

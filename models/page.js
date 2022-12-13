@@ -7,9 +7,14 @@ const Page = db.define('Tbl_Page', {
     primaryKey: true,
     autoIncrement: true,
   },
+  Type: {
+    type: Sequelize.ENUM(['BLOG', 'DESCRIPTION']),
+    allowNull: false,
+  },
   Text: {
-    type: Sequelize.STRING,
+    type: Sequelize.JSON,
+    allowNull: false
   }
-})
+}, { tableName: 'Tbl_Page' })
 
 module.exports = Page

@@ -9,9 +9,8 @@ const createUser = async (req, res) => {
     const user = await db.transaction(async (transaction) => {
       const user = await userService.createUser(req.body, transaction);
       const tokens = await generateTokens({ ...user.dataValues }, transaction);
-      
-      res.set('x-access-token', tokens.accessToken)
-      res.set('x-refresh-token', tokens.refreshToken)
+      res.append('x-access-token', tokens.accessToken)
+      res.append('x-refresh-token', tokens.refreshToken)
 
       return user
     });
@@ -36,8 +35,8 @@ const loginUser = async (req, res) => {
     if (user) {
       if (validPassword(req.body.Password, user)) {
         const tokens = await generateTokens({ ...user.dataValues });
-        res.set('x-access-token', tokens.accessToken)
-        res.set('x-refresh-token', tokens.refreshToken)
+        res.append('x-access-token', tokens.accessToken)
+        res.append('x-refresh-token', tokens.refreshToken)
         return res.send({
           success: true,
           message: "SUCCESSFULL LOGIN",
@@ -64,8 +63,8 @@ const loginUser = async (req, res) => {
 const logoutUser= async (req, res) => {
   try {
     if (req?.user) {
-      const SessionId = getSessionId(req.headers['x-refresh-token'])
-      await sessionService.deleteSession({ SessionId })
+      const SessionId = await getSessionId(req.headers['x-refresh-token'])
+      await sessionService.deleteSession({ Id: SessionId })
       return res.send({
         success: true,
         message: "SUCCESSFULL LOGOUT",
@@ -74,15 +73,31 @@ const logoutUser= async (req, res) => {
       throw new Error("NO USER AUTHENTICATED")
     }
   } catch (err) {
+    console.log(err)
     return res.status(400).send({
-      success: true,
+      success: false,
       message: err?.name ? err.name : "FAILED TO LOGOUT USER",
     });
   }
 }
 
+const checkUserAuthentication = async (req, res) => {
+  try {
+    return res.send({
+      success: true,
+      data: req.user
+    })
+  } catch (err) {
+    console.log(err)
+    return res.status(400).send({
+      success: false,
+      message: err?.name ? err.name : "FAILED TO LOGOUT USER",
+    });
+  }
+}
 module.exports = {
   createUser,
   loginUser,
   logoutUser,
+  checkUserAuthentication,
 };
