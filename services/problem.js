@@ -33,7 +33,7 @@ const getAll = async (filter) => {
       ]
     })
   } catch(err) {
-    throw err.name ? err : new Error("FAILED TO CREATE CATEGORY")
+    throw err.name ? err : new Error("FAILED TO GET PROBLEM")
   }
 }
 
@@ -41,11 +41,21 @@ const createProblem = async (data, transaction={}) => {
   try {
     return await Problem.create(data, { transaction })
   } catch(err) {
-    throw err.name ? err : new Error("FAILED TO CREATE CATEGORY")
+    throw err.name ? err : new Error("FAILED TO CREATE PROBLEM")
+  }
+}
+
+const updateProblem = async (data, transaction={}) => {
+  try {
+    const problem = await Problem.findOne({where: { Id: data.Id }})
+    return await problem.update(data, { transaction })
+  } catch(err) {
+    throw err.name ? err : new Error("FAILED TO UPDATE PROBLEM")
   }
 }
 
 module.exports = {
   getAll,
   createProblem,
+  updateProblem,
 }

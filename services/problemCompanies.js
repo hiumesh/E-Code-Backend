@@ -8,6 +8,16 @@ const createProblemCompaniesBulk = async (ProblemId, data=[], transaction={}) =>
   }
 }
 
+const updateProblemCompaniesBulk = async (ProblemId, data=[], transaction={}) => {
+  try {
+    await ProblemCompanies.destroy({ where: { ProblemId }}, { transaction })
+    return await ProblemCompanies.bulkCreate(data?.map((company) => ({ CompanyId: company, ProblemId })), { transaction })
+  } catch(err) {
+    throw err.name ? err : new Error("FAILED TO UPDATE PROBLEM COMPANIES")
+  }
+}
+
 module.exports = {
   createProblemCompaniesBulk,
+  updateProblemCompaniesBulk,
 }
