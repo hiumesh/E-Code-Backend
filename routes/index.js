@@ -8,5 +8,6 @@ router.use('/tag', require('./tag'))
 router.use('/company', require('./company'))
 router.use('/language', require('./language'))
 router.use('/problem', require('./problem'))
+router.use('/blog', require('./blog'))
 
 module.exports = router
