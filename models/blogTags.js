@@ -1,11 +1,11 @@
 const Sequelize = require('sequelize')
 const db = require('../helpers/db')
 
-const ProblemTags = db.define('Tbl_Problem_Tags', {
-  ProblemId: {
+const BlogTags = db.define('Tbl_Blog_Tags', {
+  BlogId: {
     type: Sequelize.BIGINT,
     references: {
-      model: 'Tbl_Problem',
+      model: 'Tbl_Blog',
       key: 'Id'
     },
     allowNull: false,
@@ -13,19 +13,19 @@ const ProblemTags = db.define('Tbl_Problem_Tags', {
   TagId: {
     type: Sequelize.BIGINT,
     references: {
-      model: 'Tbl_Tag',
+      model: 'Tbl_B_Tag',
       key: 'Id'
     },
     allowNull: false
   }
 }, {
-  tableName: 'Tbl_Problem_Tags',
+  tableName: 'Tbl_Blog_Tags',
   indexes: [
     {
-      fields: ['ProblemId', 'TagId'],
+      fields: ['BlogId', 'TagId'],
       type: 'UNIQUE'
     }
   ]
 })
 
-module.exports = ProblemTags
+module.exports = BlogTags

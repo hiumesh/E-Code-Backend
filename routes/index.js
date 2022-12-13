@@ -11,5 +11,6 @@ router.use('/problem', require('./problem'))
 router.use('/blog', require('./blog'))
 router.use('comment', require('./comment'))
 router.use('/upload', require('./upload'))
+router.use('/markdown', require('./markdown'))
 
 module.exports = router

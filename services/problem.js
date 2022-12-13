@@ -16,7 +16,7 @@ const getAll = async (filter) => {
         },
         {
           model: Page,
-          as: 'JSONDescription'
+          as: 'DescriptionPage'
         },
         {
           model: Company,

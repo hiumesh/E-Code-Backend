@@ -12,6 +12,10 @@ const Blog = db.define('Tbl_Blog', {
     unique: true,
     allowNull: false,
   },
+  CoverImage: {
+    type: Sequelize.STRING,
+    allowNull: false,
+  },
   Text: {
     type: Sequelize.BIGINT,
     references: {

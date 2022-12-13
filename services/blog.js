@@ -1,5 +1,6 @@
 const Blog = require('../models/blog')
 const Page = require('../models/page')
+const BTag = require('../models/bTags')
 
 const getAll = async (filter) => {
   try {
@@ -8,8 +9,12 @@ const getAll = async (filter) => {
       include: [
         {
           model: Page,
-          as: 'JSONText'
+          as: 'TextPage'
         },
+        {
+          model: BTag,
+          as: 'BTags',
+        }
       ]
     })
   } catch(err) {

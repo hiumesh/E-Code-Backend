@@ -2,18 +2,19 @@ const { Op } = require('sequelize')
 const db = require('../helpers/db')
 const blogService = require('../services/blog')
 const pageService = require('../services/page')
+const blogTagsService = require('../services/blogTags')
 
 const createBlog = async (req, res) => {
   try {
     const result = await db.transaction(async (transaction) => {
       const data = req.body
-      let blog
+      if (!data.tags && data.tags.length < 4) throw new Error('MINIMUM FOUR TAGS ARE REQUIRED')
       const page = await pageService.create({Text: data.Text, Type: 'BLOG'}, transaction)
       data.Text = page.Id
       data.UserId = req.user.Id
 
-      blog = await blogService.createBlog(data, transaction)
-
+      const blog = await blogService.createBlog(data, transaction)
+      await blogTagsService.createBlogTagsBulk(blog.Id, req.user.Id, data.tags, transaction)
       return blog
     })
     return res.send({
@@ -34,6 +35,7 @@ const updateBlog = async (req, res) => {
   try {
     const result = await db.transaction(async (transaction) => {
       const data = req.body
+      if (!data.tags && data.tags.length < 4) throw new Error('MINIMUM FOUR TAGS ARE REQUIRED')
       const blogData = { 
         Id: data.Id,
         Title: data.Title,
@@ -41,7 +43,7 @@ const updateBlog = async (req, res) => {
       }
       const blog = await blogService.updateBlog(blogData, transaction)
       await pageService.update(blog.Text, { Text: data.Text }, transaction)
-
+      await blogTagsService.updateBlogTagsBulk(blog.Id, req.user.Id, data.tags, transaction)
       return blog
     })
     return res.send({
