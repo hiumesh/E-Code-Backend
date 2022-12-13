@@ -12,7 +12,7 @@ const Page = db.define('Tbl_Page', {
     allowNull: false,
   },
   Text: {
-    type: Sequelize.JSON,
+    type: Sequelize.STRING(10000),
     allowNull: false
   }
 }, { tableName: 'Tbl_Page' })
