@@ -1,3 +1,4 @@
+const  sequelize = require('sequelize')
 const Blog = require('../models/blog')
 const Page = require('../models/page')
 const BTag = require('../models/bTags')
@@ -5,19 +6,28 @@ const BTag = require('../models/bTags')
 const getAll = async (filter) => {
   try {
     return await Blog.findAll({
-      where: filter,
+      where: {
+        ...filter,
+      },
       include: [
-        {
+       {
           model: Page,
-          as: 'TextPage'
+          as: 'TextPage',
         },
         {
           model: BTag,
           as: 'BTags',
-        }
-      ]
+        },
+        {
+          model: BTag,
+          as: 'QueryBTags',
+          attributes: []
+        },
+      ],
+      
     })
   } catch(err) {
+    console.log(err);
     throw err.name ? err : new Error("FAILED TO GET BLOG")
   }
 }
@@ -30,7 +40,7 @@ const createBlog = async (data, transaction={}) => {
   }
 }
 
-const updateBlog = async (data, transaction={}) => {
+const updateBlog = async (data, transaction=null) => {
   try {
     const blog = await Blog.findOne({where: { Id: data.Id }})
     return await blog.update(data, { transaction })

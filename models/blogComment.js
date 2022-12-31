@@ -19,6 +19,10 @@ const BlogComment = db.define('Tbl_Blog_Comment', {
     },
     allowNull: true
   },
+  Status: {
+    type: Sequelize.ENUM(["COMMENT", "COMPLAIN"]),
+    defaultValue: "COMMENT",
+  },
   BlogId: {
     type: Sequelize.BIGINT,
     references: {

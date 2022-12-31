@@ -6,6 +6,7 @@ const BTag = require('./bTags')
 const Company = require('./company')
 const TestCase = require('./testCase')
 const Blog = require('./blog')
+const BlogComment = require('./blogComment')
 
 
 Problem.hasOne(Page, { sourceKey: 'Description', foreignKey: 'Id', as: 'DescriptionPage' })
@@ -16,3 +17,5 @@ Problem.hasMany(TestCase, { foreignKey: 'ProblemId', as: 'TestCases' })
 
 Blog.hasOne(Page, { sourceKey: 'Text', foreignKey: 'Id', as: 'TextPage' })
 Blog.belongsToMany(BTag, { through: 'Tbl_Blog_Tags', foreignKey: 'BlogId', otherKey: 'TagId', as: 'BTags' })
+Blog.belongsToMany(BTag, { through: 'Tbl_Blog_Tags', foreignKey: 'BlogId', otherKey: 'TagId', as: 'QueryBTags' })
+BlogComment.belongsTo(Blog, { foreignKey: 'BlogId', targetKey: 'Id', as: 'CommentBlog'})

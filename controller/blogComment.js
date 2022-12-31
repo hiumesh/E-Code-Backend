@@ -33,9 +33,27 @@ const getBlogComments = async (req, res) => {
       message: err?.name ? err.name : "FAILED TO GET BLOGCOMMENTS",
     })
   }
-} 
+}
+
+const getUserAllBlogComments = async (req, res) => {
+  try {
+    const blogComments = await blogCommentService.getComment({ '$CommentBlog.UserId$':  req.user.Id })
+    return res.send({
+      success: true,
+      message: "SUCCESSFULLY GET BLOGCOMMENTS",
+      data: blogComments,
+    })
+  } catch(err) {
+    console.log(err)
+    return res.status(400).send({
+      success: true,
+      message: err?.name ? err.name : "FAILED TO GET BLOGCOMMENTS",
+    })
+  }
+}
 
 module.exports = {
   getBlogComments,
   createBlogComment,
+  getUserAllBlogComments,
 }

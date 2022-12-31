@@ -1,4 +1,5 @@
 const BlogComment = require('../models/blogComment')
+const Blog = require('../models/blog')
 
 const createComment = async (data) => {
   try {
@@ -11,7 +12,17 @@ const createComment = async (data) => {
 const getComment = async (filter) => {
   try {
     return await BlogComment.findAll({
-      where: filter
+      where: {
+        ...filter,
+        Status: 'COMMENT',
+      },
+      include: [
+        {
+          model: Blog,
+          as: 'CommentBlog',
+          attributes: [],
+        }
+      ]
     })
   } catch(err) {
     throw err.name ? err : new Error("FAILED TO GET BLOGCOMMENTS")
